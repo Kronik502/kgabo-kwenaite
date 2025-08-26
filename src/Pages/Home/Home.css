@@ -1,0 +1,332 @@
+/* Home.css - Black & Blue Theme */
+
+/* CSS Variables for consistent theming */
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Home Container */
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: var(--gradient-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Effects */
+.home-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at center, rgba(0, 102, 255, 0.1) 0%, transparent 70%);
+  z-index: 0;
+}
+
+.home-container::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(26, 115, 232, 0.05) 0%, transparent 70%);
+  z-index: 0;
+}
+
+/* Main Content Layout */
+.home-content {
+  flex: 1;
+  max-width: 600px;
+  z-index: 1;
+  position: relative;
+  margin-right: 3rem;
+}
+
+/* Typography Styles */
+.greeting {
+  font-size: 1.2rem;
+  color: var(--accent-blue);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.2s forwards;
+}
+
+.welcome-message {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.4s forwards;
+  background: var(--gradient-primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: fadeInUp 0.8s ease-out 0.4s forwards, gradientShift 3s ease-in-out infinite;
+}
+
+.name {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.6s forwards;
+}
+
+.role {
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.8s forwards;
+}
+
+.statement {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 1s forwards;
+}
+
+/* Contact Button */
+.contact-button {
+  background: var(--gradient-primary);
+  color: var(--white);
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: var(--box-shadow);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 1.2s forwards;
+}
+
+.contact-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s;
+}
+
+.contact-button:hover::before {
+  left: 100%;
+}
+
+.contact-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0, 102, 255, 0.4);
+}
+
+.contact-button:active {
+  transform: translateY(-1px);
+}
+
+/* Image Container */
+.home-image {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+  opacity: 0;
+  animation: fadeInRight 1s ease-out 0.6s forwards;
+}
+
+.home-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 102, 255, 0.3);
+  transition: var(--transition);
+  filter: brightness(1.1) contrast(1.1);
+}
+
+.home-image:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 25px 70px rgba(0, 102, 255, 0.4);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .home-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  .home-content {
+    margin-right: 0;
+    margin-bottom: 3rem;
+    max-width: 100%;
+  }
+  
+  .welcome-message {
+    font-size: 2.8rem;
+  }
+  
+  .name {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 1rem;
+  }
+  
+  .greeting {
+    font-size: 1rem;
+  }
+  
+  .welcome-message {
+    font-size: 2.2rem;
+    line-height: 1.3;
+  }
+  
+  .name {
+    font-size: 1.8rem;
+  }
+  
+  .role {
+    font-size: 1.1rem;
+  }
+  
+  .statement {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .contact-button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+  
+  .home-image {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-container {
+    min-height: 100vh;
+    padding: 0.8rem;
+  }
+  
+  .greeting {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .welcome-message {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .name {
+    font-size: 1.5rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .role {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .statement {
+    font-size: 0.95rem;
+    margin-bottom: 1.8rem;
+  }
+  
+  .contact-button {
+    padding: 0.7rem 1.8rem;
+    font-size: 0.95rem;
+  }
+  
+  .home-image {
+    max-width: 280px;
+  }
+  
+  .home-content {
+    margin-bottom: 2rem;
+  }
+}
+
+/* Ultra-small screens */
+@media (max-width: 320px) {
+  .welcome-message {
+    font-size: 1.6rem;
+  }
+  
+  .name {
+    font-size: 1.3rem;
+  }
+  
+  .home-image {
+    max-width: 250px;
+  }
+}

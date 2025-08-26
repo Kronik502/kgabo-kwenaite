@@ -1,0 +1,334 @@
+/* About.css - Black & Blue Theme */
+
+/* About Container */
+.about-container {
+  min-height: 100vh;
+  padding: 4rem 2rem 2rem;
+  background: linear-gradient(135deg, var(--black), var(--dark-gray));
+  color: var(--text-light);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background Effects */
+.about-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at 20% 30%, rgba(0, 102, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(26, 115, 232, 0.06) 0%, transparent 50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Main Heading */
+.about-container > h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.2s forwards;
+}
+
+.about-container > h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
+  border-radius: 2px;
+}
+
+/* About Sections */
+.about-section {
+  max-width: 1000px;
+  margin: 0 auto 3rem;
+  background: rgba(30, 30, 30, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 102, 255, 0.2);
+  border-radius: 20px;
+  padding: 2.5rem;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.about-section:nth-child(2) { animation-delay: 0.3s; }
+.about-section:nth-child(3) { animation-delay: 0.4s; }
+.about-section:nth-child(4) { animation-delay: 0.5s; }
+.about-section:nth-child(5) { animation-delay: 0.6s; }
+.about-section:nth-child(6) { animation-delay: 0.7s; }
+.about-section:nth-child(7) { animation-delay: 0.8s; }
+
+.about-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 102, 255, 0.03), rgba(26, 115, 232, 0.03));
+  border-radius: 20px;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.about-section:hover::before {
+  opacity: 1;
+}
+
+.about-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 102, 255, 0.15);
+  border-color: rgba(0, 102, 255, 0.4);
+}
+
+/* Section Headings */
+.about-section h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.about-section h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--primary-blue), var(--secondary-blue));
+  border-radius: 2px;
+}
+
+/* Paragraphs */
+.about-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.about-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* Skills List */
+.about-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-section ul li {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+  position: relative;
+  text-align: justify;
+}
+
+.about-section ul li::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  color: var(--accent-blue);
+  font-size: 0.9rem;
+  top: 0.1rem;
+}
+
+.about-section ul li:hover {
+  color: var(--white);
+  transform: translateX(5px);
+  transition: all 0.3s ease;
+}
+
+/* Highlight Keywords */
+.about-section p strong,
+.about-section li strong {
+  color: var(--accent-blue);
+  font-weight: 600;
+}
+
+/* Professional Summary Special Styling */
+.about-section:first-of-type {
+  background: rgba(0, 102, 255, 0.05);
+  border: 2px solid rgba(0, 102, 255, 0.3);
+}
+
+.about-section:first-of-type h2 {
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-container {
+    padding: 3rem 1.5rem 2rem;
+  }
+
+  .about-container > h1 {
+    font-size: 3rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .about-section {
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 2.5rem 1rem 2rem;
+  }
+
+  .about-container > h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .about-section {
+    margin-bottom: 2rem;
+    padding: 1.8rem;
+    border-radius: 15px;
+  }
+
+  .about-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .about-section p,
+  .about-section ul li {
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    padding: 2rem 0.8rem 1.5rem;
+  }
+
+  .about-container > h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-container > h1::after {
+    width: 60px;
+    height: 3px;
+  }
+
+  .about-section {
+    margin-bottom: 1.8rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .about-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    padding-left: 1.2rem;
+  }
+
+  .about-section h2::before {
+    width: 3px;
+  }
+
+  .about-section p,
+  .about-section ul li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+  }
+
+  .about-section ul li {
+    padding-left: 1.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .about-container {
+    padding: 1.8rem 0.6rem 1.5rem;
+  }
+
+  .about-container > h1 {
+    font-size: 1.8rem;
+  }
+
+  .about-section {
+    padding: 1.2rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .about-section p,
+  .about-section ul li {
+    font-size: 0.9rem;
+  }
+}
+
+/* Smooth Scrolling Enhancement */
+@media (prefers-reduced-motion: no-preference) {
+  .about-section {
+    scroll-margin-top: 100px;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .about-section {
+    border: 2px solid var(--primary-blue);
+  }
+  
+  .about-section h2::before {
+    background: var(--primary-blue);
+  }
+}
