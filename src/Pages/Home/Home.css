@@ -274,7 +274,7 @@
 @media (max-width: 480px) {
   .home-container {
     min-height: 100vh;
-    padding: 0.8rem;
+    padding: 50px 0px 0px;
   }
   
   .greeting {
@@ -309,11 +309,14 @@
   
   .home-image {
     max-width: 280px;
-    margin-top:-200px;
+    margin-top:-500px;
+
   }
+
   
   .home-content {
     margin-bottom: 0rem;
+    margin-top:50px;
   }
 }
 
