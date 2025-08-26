@@ -55,7 +55,7 @@
 
 /* Typography Styles */
 .greeting {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   color: var(--accent-blue);
   font-weight: 500;
   margin-bottom: 1rem;
@@ -278,7 +278,7 @@
   }
   
   .greeting {
-    font-size: 0.9rem;
+    font-size:1.6rem;
     margin-bottom: 0.8rem;
   }
   
@@ -309,10 +309,11 @@
   
   .home-image {
     max-width: 280px;
+    margin-top:-200px;
   }
   
   .home-content {
-    margin-bottom: 2rem;
+    margin-bottom: 0rem;
   }
 }
 

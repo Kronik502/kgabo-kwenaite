@@ -4,7 +4,7 @@
 .contact {
   position: relative;
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 6rem 0;
   background: var(--gradient-dark);
   overflow: hidden;
 }

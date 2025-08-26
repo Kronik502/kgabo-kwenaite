@@ -58,38 +58,38 @@ const translations = {
     statement: 'Ngakha tikhono letiphakamisako emabhizinisi nemiphakatsi.',
     button: 'Xhumana Nami',
   },
-  nr: {
-    greeting: 'Ukhulume Kanjani',
-    welcome: 'Uyamukelwa ku-Portfolio yami',
-    statement: 'Ngakha izisombululo eziqinisa ibhizinisi lomphakathi.',
-    button: 'Thintana Nami',
-  },
+  
   nso: {
     greeting: 'Dumela',
     welcome: 'Re a go amogela mo Portfolio ya me',
     statement: 'Ke aga ditharabololo tšeo di matlafatšago dikgwebo le setšhaba.',
     button: 'Ikopanye le nna',
-  },
-  nbl: {
-    greeting: 'Ukhulume Kanjani',
-    welcome: 'Uyamukelwa ku-Portfolio yami',
-    statement: 'Ngakha izixazululo eziqinisa amabhizinisi nemiphakathi.',
-    button: 'Xhumana Nami',
   }
 };
 const languageCodes = Object.keys(translations);
 
 const Home = () => {
   const [langIndex, setLangIndex] = useState(0);
-  const lang = languageCodes[langIndex];
-  const { greeting, welcome, statement, button } = translations[lang];
+  const [currentLang, setCurrentLang] = useState(languageCodes[0]); // Actual displayed language
+  const [showTypewriter, setShowTypewriter] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setLangIndex((prevIndex) => (prevIndex + 1) % languageCodes.length);
+      setShowTypewriter(false); // Stop the animation temporarily
+      setTimeout(() => {
+        setLangIndex((prevIndex) => {
+          const nextIndex = (prevIndex + 1) % languageCodes.length;
+          setCurrentLang(languageCodes[nextIndex]);
+          setShowTypewriter(true); // Trigger re-typing
+          return nextIndex;
+        });
+      }, 100); // brief delay before changing to next language
     }, 9000);
+
     return () => clearInterval(interval);
   }, []);
+
+  const { greeting, welcome, statement, button } = translations[currentLang];
 
   return (
     <section className="home-container">
@@ -97,16 +97,20 @@ const Home = () => {
         <p className="greeting">{greeting}</p>
 
         <h1 className="welcome-message">
-          <Typewriter
-            key={`welcome-${lang}`}
-            words={[welcome]}
-            loop={false}
-            cursor
-            cursorStyle="|"
-            typeSpeed={70}
-            deleteSpeed={50}
-            delaySpeed={1000}
-          />
+          {showTypewriter ? (
+         <Typewriter
+  words={[welcome]}
+  loop={1}
+  cursor
+  cursorStyle="|"
+  typeSpeed={70}
+  deleteSpeed={0}    // prevents deletion
+  delaySpeed={10000} // doesn't matter much since no deletion
+/>
+
+          ) : (
+            welcome // Show static text while typewriter is "off"
+          )}
         </h1>
 
         <h2 className="name">Kgabo Kwenaite</h2>
