@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
 import { Typewriter } from 'react-simple-typewriter';
-import codingGif from '../../assets/coding.gif'; // adjust path if needed
+import codingGif from '../../assets/Coding.gif'; // adjust path if needed
 
 const translations = {
   en: {
