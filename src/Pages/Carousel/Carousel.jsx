@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Carousel.css';
 import {
   FaReact,
@@ -20,17 +21,15 @@ const techStack = [
 
 const Carousel = () => {
   const [isVisible, setIsVisible] = useState(false);
-
-  const handleSeeProjects = useCallback(() => {
-    const projectsSection = document.getElementById('projects');
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, []);
+  const navigate = useNavigate(); // ✅ For routing
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  const handleSeeProjects = () => {
+    navigate('/projects'); // ✅ Route to /projects
+  };
 
   return (
     <div className="carousel-section">
@@ -107,7 +106,7 @@ const Carousel = () => {
         <section className={`cta-section ${isVisible ? 'animate-in' : ''}`}>
           <button 
             className="see-projects-btn"
-            onClick={handleSeeProjects}
+            onClick={handleSeeProjects} // ✅ Now routes to /projects
             aria-label="See all my projects"
           >
             <span>See All My Projects</span>

@@ -51,8 +51,8 @@ const Skills = () => {
       { name: 'JSON', rating: 85, note: 'Intermediate', description: 'Data interchange & APIs.', logo: Json || defaultLogo },
     ],
     tools: [
-      { name: 'Git', rating: 95, note: 'Intermediate', description: 'Version control workflows.', logo: GitLogo || defaultLogo },
-      { name: 'GitHub', rating: 90, note: 'Intermediate', description: 'Code hosting & collaboration.', logo: GitHubLogo || defaultLogo },
+      { name: 'Git', rating: 95, note: 'Advanced', description: 'Version control workflows.', logo: GitLogo || defaultLogo },
+      { name: 'GitHub', rating: 90, note: 'Advanced', description: 'Code hosting & collaboration.', logo: GitHubLogo || defaultLogo },
       { name: 'Vercel', rating: 90, note: 'Intermediate', description: 'Modern deployment pipeline.', logo: VercelLogo || defaultLogo },
       { name: 'Microsoft Office', rating: 99, note: 'Proficient', description: 'Docs, spreadsheets, presentations.', logo: Office || defaultLogo },
     ],

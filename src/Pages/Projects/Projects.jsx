@@ -1,5 +1,19 @@
 import React from 'react';
-import './Projects.css';
+import { 
+  FaReact, 
+  FaNodeJs, 
+  FaCss3Alt
+} from 'react-icons/fa';
+import { 
+  SiJavascript, 
+  SiMongodb, 
+  SiFirebase, 
+  SiRedux,
+  SiVite,
+  SiTailwindcss,
+  SiExpress
+} from 'react-icons/si';
+import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recharts';
 
 // Import images
 import ProfileAppImage from '../../assets/Apps/Profile-App.jpg';
@@ -19,162 +33,239 @@ import Grey from '../../assets/Apps/Grey.jpg';
 import JandL from '../../assets/Apps/JL.jpg';
 import Starland from '../../assets/Apps/Starland.jpg';
 import Tipsy from '../../assets/Apps/Tipsy.jpg';
+import './Projects.css';
 
 function Projects() {
   const allProjects = [
     {
-      title: 'UI Portfolio',
-      description: 'A beautifully designed portfolio showcasing my UI/UX skills.',
+      title: 'MangaNola Trading',
+      description: 'Professional website designed for a trading company to showcase their services and business offerings. Built with modern web technologies featuring responsive design and clean user interface for optimal user experience.',
       thumbnail: ProfileAppImage,
-      demoLink: 'https://kronikprofile.vercel.app/',
-      githubLink: 'https://github.com/Kronik502/Kronikprofile',
+      demoLink: 'https://puur-waste-management.vercel.app/',
+      isPrivate: true,
+      tools: [
+        { name: 'Vite', icon: <SiVite /> },
+        { name: 'React', icon: <FaReact /> },
+        { name: 'JavaScript', icon: <SiJavascript /> },
+        { name: 'CSS3', icon: <FaCss3Alt /> }
+      ]
+    },
+    {
+      title: 'Puur Waste Management',
+      description: 'Corporate website developed for an environmental waste management company. Features detailed service information, company profile, and contact sections with modern, professional design.',
+      thumbnail: ProfileAppImage,
+      demoLink: 'https://puur-waste-management.vercel.app/',
+      isPrivate: true,
+      tools: [
+        { name: 'Vite', icon: <SiVite /> },
+        { name: 'React', icon: <FaReact /> },
+        { name: 'JavaScript', icon: <SiJavascript /> },
+        { name: 'CSS3', icon: <FaCss3Alt /> }
+      ]
+    },
+    {
+      title: 'Bulk Basket',
+      description: 'E-commerce platform for bulk shopping featuring product catalog, cart functionality, and Firebase integration for authentication and data management.',
+      thumbnail: ProfileAppImage,
+      demoLink: 'https://bulkbasket.vercel.app/',
+      isPrivate: true,
+      tools: [
+        { name: 'Vite', icon: <SiVite /> },
+        { name: 'React', icon: <FaReact /> },
+        { name: 'JavaScript', icon: <SiJavascript /> },
+        { name: 'CSS3', icon: <FaCss3Alt /> },
+        { name: 'Firebase', icon: <SiFirebase /> }
+      ]
+    },
+    {
+      title: 'Wings Of Hope Pre-School',
+      description: 'Educational web app for pre-school allowing online applications. Includes Firebase integration for form submissions and data storage.',
+      thumbnail: ProfileAppImage,
+      demoLink: 'https://wings-of-hope-pi.vercel.app/',
+      isPrivate: true,
+      tools: [
+        { name: 'Vite', icon: <SiVite /> },
+        { name: 'React', icon: <FaReact /> },
+        { name: 'JavaScript', icon: <SiJavascript /> },
+        { name: 'CSS3', icon: <FaCss3Alt /> },
+        { name: 'Firebase', icon: <SiFirebase /> }
+      ]
+    },
+    {
+      title: 'Cargo-Connect',
+      description: 'Transportation and logistics web platform with Firebase backend for managing customer inquiries and data.',
+      thumbnail: ProfileAppImage,
+      demoLink: 'https://cargo-connect-mu.vercel.app/',
+      isPrivate: true,
+      tools: [
+        { name: 'Vite', icon: <SiVite /> },
+        { name: 'React', icon: <FaReact /> },
+        { name: 'JavaScript', icon: <SiJavascript /> },
+        { name: 'CSS3', icon: <FaCss3Alt /> },
+        { name: 'Firebase', icon: <SiFirebase /> }
+      ]
     },
     {
       title: 'FIPAS',
-      description: 'A professional website for a forensic investigation and assurance consulting company.',
+      description: 'Corporate website for forensic investigation and assurance consulting company.',
       thumbnail: Fipas,
       demoLink: 'https://fipas.vercel.app/',
       isPrivate: true,
-    },
-    {
-      title: 'D&H Driving School',
-      description: 'An informational website for a certified driving school offering various training packages.',
-      thumbnail: DandH,
-      demoLink: 'https://dand-h-driving-school.vercel.app/',
-      isPrivate: true,
-    },
-    {
-      title: 'J&L Upholstery',
-      description: 'A sleek showcase site for a local upholstery business highlighting their services and work.',
-      thumbnail: JandL,
-      demoLink: 'https://j-l-upholstery.vercel.app/',
-      isPrivate: true,
-    },
-    {
-      title: 'Tipsy Turvy Nails',
-      description: 'A stylish site for a nail salon featuring services, gallery, and booking contact info.',
-      thumbnail: Tipsy,
-      demoLink: 'https://kronikprofile.vercel.app/',
-      isPrivate: true,
-    },
-    {
-      title: 'Demo Baker',
-      description: 'A bakery app demo that displays a list of products, offers, and interactive UI elements.',
-      thumbnail: DemoBakery,
-      demoLink: 'https://bakery2-chjk.vercel.app/',
-      isPrivate: true,
-    },
-    {
-      title: 'Starland Bakery',
-      description: 'A professional website for a local bakery featuring their menu, products, and contact info.',
-      thumbnail: Starland,
-      demoLink: 'https://starland-bakery.vercel.app/',
-      isPrivate: true,
-    },
-    {
-      title: 'The Grey Exchange',
-      description: 'An online fashion and accessories shop with a clean, user-friendly interface.',
-      thumbnail: Grey,
-      demoLink: 'https://the-grey-exchange.vercel.app/',
-      isPrivate: true,
+      tools: [
+        { name: 'Vite', icon: <SiVite /> },
+        { name: 'React', icon: <FaReact /> },
+        { name: 'JavaScript', icon: <SiJavascript /> },
+        { name: 'CSS3', icon: <FaCss3Alt /> }
+      ]
     },
     {
       title: 'Math Market',
-      description: 'A marketplace app designed to showcase products using basic e-commerce concepts.',
+      description: 'Educational marketplace demonstrating e-commerce concepts with Firebase backend.',
       thumbnail: Math,
       demoLink: 'https://math-market-ixiv.vercel.app/',
       githubLink: 'https://github.com/Kronik502/Math-Market',
+      tools: [
+        { name: 'Vite', icon: <SiVite /> },
+        { name: 'React', icon: <FaReact /> },
+        { name: 'JavaScript', icon: <SiJavascript /> },
+        { name: 'Firebase', icon: <SiFirebase /> }
+      ]
     },
     {
       title: 'Mortgage Calculator',
-      description: 'A tool to calculate mortgage payments based on loan amount, interest rate, and loan term.',
+      description: 'Financial calculator for computing mortgage payments with responsive UI.',
       thumbnail: MortgageCalculatorImage,
       demoLink: 'https://mortgage-calculator-beta-one.vercel.app/',
       githubLink: 'https://github.com/Kronik502/Mortgage-Calculator',
-    },
-    {
-      title: 'Node Card Game',
-      description: 'A card game built with Node.js and Socket.IO for real-time multiplayer.',
-      thumbnail: NodeCardGameImage,
-      demoLink: 'https://card-game-gilt.vercel.app/',
-      githubLink: 'https://github.com/Kronik502/CardGame',
-    },
-    {
-      title: 'Hotel App',
-      description: 'Hotel booking application with room listings and availability.',
-      thumbnail: HotelImage,
-      demoLink: 'https://hotel-app-sigma.vercel.app/',
-      githubLink: 'https://github.com/Kronik502/Quiz-App',
-    },
-    {
-      title: 'Weather App',
-      description: 'An app that provides weather forecasts for any location.',
-      thumbnail: WeatherAppImage,
-      demoLink: 'https://weatherapplication-seven.vercel.app',
-      githubLink: 'https://github.com/Kronik502/weatherapplication',
+      tools: [
+        { name: 'Vite', icon: <SiVite /> },
+        { name: 'React', icon: <FaReact /> },
+        { name: 'JavaScript', icon: <SiJavascript /> }
+      ]
     },
     {
       title: 'Recipe App',
-      description: 'An app that allows users to add, find, edit, and update recipes.',
+      description: 'Full-stack recipe management app with CRUD operations and MongoDB database.',
       thumbnail: RecipeAppImage,
       demoLink: 'https://recipes-self-alpha.vercel.app/',
       githubLink: 'https://github.com/Kronik502/Recipes',
+      tools: [
+        { name: 'Vite', icon: <SiVite /> },
+        { name: 'React', icon: <FaReact /> },
+        { name: 'JavaScript', icon: <SiJavascript /> },
+        { name: 'Node.js', icon: <FaNodeJs /> },
+        { name: 'MongoDB', icon: <SiMongodb /> },
+        { name: 'Express', icon: <SiExpress /> }
+      ]
     },
     {
       title: 'To Do List',
-      description: 'A to-do list app with priority levels and login functionality.',
+      description: 'Task management app with login, CRUD, and Redux state management.',
       thumbnail: ToDo,
       demoLink: 'https://to-do-app-fawn-three.vercel.app/home',
       githubLink: 'https://github.com/Kronik502/ToDoApp',
+      tools: [
+        { name: 'Vite', icon: <SiVite /> },
+        { name: 'React', icon: <FaReact /> },
+        { name: 'JavaScript', icon: <SiJavascript /> },
+        { name: 'Node.js', icon: <FaNodeJs /> },
+        { name: 'MongoDB', icon: <SiMongodb /> },
+        { name: 'Redux', icon: <SiRedux /> },
+        { name: 'Express', icon: <SiExpress /> }
+      ]
     },
     {
       title: 'Employees App',
-      description: 'An employee management system with admin features to add, update, or delete employees.',
+      description: 'Employee management system with CRUD operations and MongoDB backend.',
       thumbnail: Employee,
       demoLink: 'https://employee-myjltw6jk-kgabo-kwenaites-projects.vercel.app/login',
       githubLink: 'https://github.com/Kronik502/Employee',
-    },
-    {
-      title: 'A basic Node server',
-      description: 'A simple Node.js server setup.',
-      thumbnail: Default,
-      githubLink: 'https://github.com/Kronik502/NodeServer',
-    },
-    {
-      title: 'Node Quiz server game',
-      description: 'A server-hosted quiz game that tracks answers and time.',
-      thumbnail: Default,
-      githubLink: 'https://github.com/Kronik502/CardGame',
-    },
-    {
-      title: 'Node Quiz server',
-      description: 'A backend server for a quiz game application.',
-      thumbnail: Default,
-      githubLink: 'https://github.com/Kronik502/CardGame',
-    },
-    {
-      title: 'React Native Shopping List',
-      description: 'A React Native app for managing shopping lists.',
-      thumbnail: Default,
-      githubLink: 'https://github.com/Kronik502/RNShoppingList',
-    },
-    {
-      title: 'Restaurant App',
-      description: 'A mobile restaurant reservation app made with React Native.',
-      thumbnail: Default,
-      githubLink: 'https://github.com/Cornel-MIT/Reservation-App',
-    },
+      tools: [
+        { name: 'Vite', icon: <SiVite /> },
+        { name: 'React', icon: <FaReact /> },
+        { name: 'JavaScript', icon: <SiJavascript /> },
+        { name: 'Node.js', icon: <FaNodeJs /> },
+        { name: 'MongoDB', icon: <SiMongodb /> },
+        { name: 'Express', icon: <SiExpress /> }
+      ]
+    }
   ];
+
+  // Calculate tool usage stats
+  const calculateToolStats = () => {
+    const toolCount = {};
+    allProjects.forEach(project => {
+      project.tools.forEach(tool => {
+        toolCount[tool.name] = (toolCount[tool.name] || 0) + 1;
+      });
+    });
+    const total = Object.values(toolCount).reduce((sum, count) => sum + count, 0);
+    return Object.entries(toolCount)
+      .map(([name, count]) => ({
+        name,
+        value: count,
+        percentage: ((count / total) * 100).toFixed(1)
+      }))
+      .sort((a, b) => b.value - a.value);
+  };
+
+  const toolStats = calculateToolStats();
+
+  const COLORS = [
+    '#61DAFB', '#68A063', '#F7DF1E', '#1572B6', '#FFCA28', 
+    '#764ABC', '#47A248', '#646CFF', '#06B6D4', '#000000',
+    '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7'
+  ];
+
+  const renderCustomLabel = (entry) => `${entry.percentage}%`;
 
   return (
     <section id="projects" className="projects">
-      <h2 className="h2">Projects</h2>
+      <h2 className="h2">Projects & Technology Stack</h2>
+
+      <div className="tools-analytics">
+        <h3 className="analytics-title">Technology Distribution Across Projects</h3>
+        <ResponsiveContainer width="100%" height={400}>
+          <PieChart>
+            <Pie
+              data={toolStats}
+              cx="50%"
+              cy="50%"
+              labelLine={false}
+              label={renderCustomLabel}
+              outerRadius={120}
+              fill="#8884d8"
+              dataKey="value"
+            >
+              {toolStats.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              ))}
+            </Pie>
+            <Tooltip 
+              formatter={(value, name, props) => [`${props.payload.percentage}% (${value} uses)`, name]} 
+            />
+            <Legend 
+              verticalAlign="bottom" 
+              height={36}
+              formatter={(value, entry) => `${value}: ${entry.payload.percentage}%`} 
+            />
+          </PieChart>
+        </ResponsiveContainer>
+      </div>
+
       <div className="project-grid">
         {allProjects.map((project, index) => (
           <div key={index} className="project-card">
-            <img src={project.thumbnail} alt={`${project.title} thumbnail`} className="project-image" />
+            <img src={project.thumbnail} alt={project.title} className="project-image" />
             <h3 className="ptitle">{project.title}</h3>
-            <p className="ptitle">{project.description}</p>
+            <p className="pdesc">{project.description}</p>
+            <div className="project-tools">
+              {project.tools.map((tool, idx) => (
+                <span key={idx} className="tool-icon" title={tool.name}>
+                  {tool.icon}
+                </span>
+              ))}
+            </div>
             <div className="project-links">
               {project.demoLink && (
                 <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="btn">

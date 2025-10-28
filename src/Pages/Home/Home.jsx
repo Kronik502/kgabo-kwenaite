@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Home.css';
 import { Typewriter } from 'react-simple-typewriter';
 import codingGif from '../../assets/Coding.gif'; // adjust path if needed
@@ -58,7 +59,6 @@ const translations = {
     statement: 'Ngakha tikhono letiphakamisako emabhizinisi nemiphakatsi.',
     button: 'Xhumana Nami',
   },
-  
   nso: {
     greeting: 'Dumela',
     welcome: 'Re a go amogela mo Portfolio ya me',
@@ -66,24 +66,26 @@ const translations = {
     button: 'Ikopanye le nna',
   }
 };
+
 const languageCodes = Object.keys(translations);
 
 const Home = () => {
   const [langIndex, setLangIndex] = useState(0);
-  const [currentLang, setCurrentLang] = useState(languageCodes[0]); // Actual displayed language
+  const [currentLang, setCurrentLang] = useState(languageCodes[0]);
   const [showTypewriter, setShowTypewriter] = useState(true);
+  const navigate = useNavigate(); // ✅ Navigation hook
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setShowTypewriter(false); // Stop the animation temporarily
+      setShowTypewriter(false);
       setTimeout(() => {
         setLangIndex((prevIndex) => {
           const nextIndex = (prevIndex + 1) % languageCodes.length;
           setCurrentLang(languageCodes[nextIndex]);
-          setShowTypewriter(true); // Trigger re-typing
+          setShowTypewriter(true);
           return nextIndex;
         });
-      }, 100); // brief delay before changing to next language
+      }, 100);
     }, 9000);
 
     return () => clearInterval(interval);
@@ -98,18 +100,17 @@ const Home = () => {
 
         <h1 className="welcome-message">
           {showTypewriter ? (
-         <Typewriter
-  words={[welcome]}
-  loop={1}
-  cursor
-  cursorStyle="|"
-  typeSpeed={70}
-  deleteSpeed={0}    // prevents deletion
-  delaySpeed={10000} // doesn't matter much since no deletion
-/>
-
+            <Typewriter
+              words={[welcome]}
+              loop={1}
+              cursor
+              cursorStyle="|"
+              typeSpeed={70}
+              deleteSpeed={0}
+              delaySpeed={10000}
+            />
           ) : (
-            welcome // Show static text while typewriter is "off"
+            welcome
           )}
         </h1>
 
@@ -118,9 +119,10 @@ const Home = () => {
 
         <p className="statement">{statement}</p>
 
+        {/* ✅ Updated Button to Navigate to /contact */}
         <button
           className="contact-button"
-          onClick={() => window.location.href = 'mailto:your.email@example.com'}
+          onClick={() => navigate('/contact')}
           aria-label={button}
         >
           {button}
