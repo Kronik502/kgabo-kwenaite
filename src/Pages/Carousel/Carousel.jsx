@@ -80,8 +80,8 @@ const Carousel = () => {
                 <FaCode className="tech-icon" /> Tech Stack:
               </h4>
               <ul className="tech-list">
-                <li><strong>Frontend:</strong> React.js, CSS Modules, HTML5, JavaScript (ES6+),Flutter</li>
-                <li><strong>Backend:</strong> Node.js, Express.js, Dart</li>
+                <li><strong>Frontend:</strong> React.js, CSS Modules, HTML5, JavaScript (ES6+),Flutter, Dart</li>
+                <li><strong>Backend:</strong> Node.js, Express.js</li>
                 <li><strong>Real-time:</strong> Socket.IO</li>
                 <li><strong>Mobile:</strong> React Native</li>
                 <li><strong>Deployment:</strong> Vercel, GitHub Pages</li>

@@ -42,7 +42,7 @@ const Skills = () => {
       { name: 'Redux', rating: 70, note: 'Intermediate', description: 'Global state management.', logo: ReduxLogo || defaultLogo },
       { name: 'React Native', rating: 80, note: 'Intermediate', description: 'Cross-platform mobile apps.', logo: ReactLogo || defaultLogo },
       { name: 'Figma', rating: 65, note: 'Intermediate', description: 'UI/UX wireframing & prototyping.', logo: Figma || defaultLogo },
-   
+       { name: 'Dart', rating: 70, note: 'Intermediate', description: 'Flutter.', logo: Dart || defaultLogo },
     { name: 'Flutter', rating: 70, note: 'Intermediate', description: 'Cross-platform mobile apps.', logo: Flutter || defaultLogo },
     ],
     backend: [
@@ -52,7 +52,7 @@ const Skills = () => {
       { name: 'Firebase', rating: 95, note: 'Semi-Advanced', description: 'Backend services, hosting & auth.', logo: FirebaseLogo || defaultLogo },
       { name: 'SQLite3', rating: 50, note: 'Basic', description: 'Lightweight SQL engine.', logo: Sqlite || defaultLogo },
       { name: 'JSON', rating: 85, note: 'Intermediate', description: 'Data interchange & APIs.', logo: Json || defaultLogo },
-    { name: 'Dart', rating: 70, note: 'Intermediate', description: 'Flutter.', logo: Dart || defaultLogo },
+
     
     ],
     tools: [
