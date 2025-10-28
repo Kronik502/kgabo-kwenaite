@@ -24,7 +24,8 @@ import Pc from '../../assets/images/pcbuild.webp';
 import Tech from '../../assets/images/Tech.webp';
 import Cisco from '../../assets/images/cisco.png';
 import Sdlc from '../../assets/images/sdlc.png';
-
+import Dart from '../../assets/images/dart.png';
+import Flutter from '../../assets/images/flutter.png';
 
 
 
@@ -41,6 +42,8 @@ const Skills = () => {
       { name: 'Redux', rating: 70, note: 'Intermediate', description: 'Global state management.', logo: ReduxLogo || defaultLogo },
       { name: 'React Native', rating: 80, note: 'Intermediate', description: 'Cross-platform mobile apps.', logo: ReactLogo || defaultLogo },
       { name: 'Figma', rating: 65, note: 'Intermediate', description: 'UI/UX wireframing & prototyping.', logo: Figma || defaultLogo },
+   
+    { name: 'Flutter', rating: 70, note: 'Intermediate', description: 'Cross-platform mobile apps.', logo: Flutter || defaultLogo },
     ],
     backend: [
       { name: 'NodeJS', rating: 75, note: 'Intermediate', description: 'RESTful APIs & server logic.', logo: NodeLogo || defaultLogo },
@@ -49,6 +52,8 @@ const Skills = () => {
       { name: 'Firebase', rating: 95, note: 'Semi-Advanced', description: 'Backend services, hosting & auth.', logo: FirebaseLogo || defaultLogo },
       { name: 'SQLite3', rating: 50, note: 'Basic', description: 'Lightweight SQL engine.', logo: Sqlite || defaultLogo },
       { name: 'JSON', rating: 85, note: 'Intermediate', description: 'Data interchange & APIs.', logo: Json || defaultLogo },
+    { name: 'Dart', rating: 70, note: 'Intermediate', description: 'Flutter.', logo: Dart || defaultLogo },
+    
     ],
     tools: [
       { name: 'Git', rating: 95, note: 'Advanced', description: 'Version control workflows.', logo: GitLogo || defaultLogo },

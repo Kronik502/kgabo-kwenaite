@@ -17,6 +17,7 @@ const techStack = [
   { icon: FaMobileAlt, name: 'React Native', color: '#0066ff' },
   { icon: FaServer, name: 'Express.js', color: '#1a73e8' },
   { icon: FaCode, name: 'JavaScript', color: '#F7DF1E' },
+   { icon: FaMobileAlt, name: 'Flutter', color: '#0066ff' },
 ];
 
 const Carousel = () => {
@@ -59,7 +60,7 @@ const Carousel = () => {
               My work demonstrates proficiency in building visually polished, responsive interfaces using
               <span className="tech-highlight react"> React.js</span>
               with state management, form handling, and component architecture. I've also extended my expertise into
-              <span className="tech-highlight mobile"> React Native</span>
+              <span className="tech-highlight mobile"> React Native & Flutter</span>
               for mobile development, delivering cross-platform apps.
             </p>
 
@@ -79,8 +80,8 @@ const Carousel = () => {
                 <FaCode className="tech-icon" /> Tech Stack:
               </h4>
               <ul className="tech-list">
-                <li><strong>Frontend:</strong> React.js, CSS Modules, HTML5, JavaScript (ES6+)</li>
-                <li><strong>Backend:</strong> Node.js, Express.js</li>
+                <li><strong>Frontend:</strong> React.js, CSS Modules, HTML5, JavaScript (ES6+),Flutter</li>
+                <li><strong>Backend:</strong> Node.js, Express.js, Dart</li>
                 <li><strong>Real-time:</strong> Socket.IO</li>
                 <li><strong>Mobile:</strong> React Native</li>
                 <li><strong>Deployment:</strong> Vercel, GitHub Pages</li>
