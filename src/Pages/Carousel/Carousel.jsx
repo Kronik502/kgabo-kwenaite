@@ -22,14 +22,14 @@ const techStack = [
 
 const Carousel = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const navigate = useNavigate(); // ✅ For routing
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
   const handleSeeProjects = () => {
-    navigate('/projects'); // ✅ Route to /projects
+    navigate('/projects'); 
   };
 
   return (
@@ -107,7 +107,7 @@ const Carousel = () => {
         <section className={`cta-section ${isVisible ? 'animate-in' : ''}`}>
           <button 
             className="see-projects-btn"
-            onClick={handleSeeProjects} // ✅ Now routes to /projects
+            onClick={handleSeeProjects}
             aria-label="See all my projects"
           >
             <span>See All My Projects</span>
