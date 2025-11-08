@@ -51,7 +51,7 @@ function Projects() {
       title: 'MangaNola Trading',
       description: 'Professional website designed for a trading company to showcase their services and business offerings. Built with modern web technologies featuring responsive design and clean user interface for optimal user experience.',
       thumbnail: Manga,
-      demoLink: 'https://puur-waste-management.vercel.app/',
+      demoLink: 'https://https://manga-nola.vercel.app//',
       isPrivate: true,
       tools: [
         { name: 'Vite', icon: <SiVite /> },
