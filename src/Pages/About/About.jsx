@@ -26,12 +26,6 @@ const About = () => {
         </p>
       </div>
 
-      <div className="about-section">
-        <h2>Education</h2>
-        <p>
-          Currently pursuing NCV Level 4 in IT & Computer Science at Ekurhuleni West College, with studies ongoing until 2025.
-        </p>
-      </div>
 
       <div className="about-section">
         <h2>Skills</h2>

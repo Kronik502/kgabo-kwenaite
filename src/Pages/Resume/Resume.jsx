@@ -88,11 +88,7 @@ const Resume = () => {
         </div>
       </section>
 
-      <section className="resume-education">
-        <h3>Education</h3>
-        <p><strong>Ekurhuleni West TVET College</strong></p>
-        <p>NCV LEVEL 4 - Information Technology & Computer Science</p>
-      </section>
+  
 
       <section className="resume-references">
         <h3>References</h3>
